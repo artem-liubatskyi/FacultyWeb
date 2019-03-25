@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Subject>
+
+@{
+    ViewData["Title"] = "All subjects";
+}
+
+<h2>All subjects</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hours)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Course)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var subject in Model) {
+        <tr>
+            <td>
+                <a asp-controller="Subjects" asp-action="Details" asp-route-id="@subject.Id">@subject.Name</a>
+            </td>
+            <td>
+                @subject.Hours
+            </td>
+            <td>
+                @subject.Course.Name
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

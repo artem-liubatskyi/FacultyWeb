@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Faculty</title>
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
+              crossorigin="anonymous"
+              integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" />
+    </environment>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+            </div>
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Specialities" asp-action="Index">Specialities</a>
+            </div>
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Courses" asp-action="Index">Courses</a>
+            </div>
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Subjects" asp-action="Index">Subjects</a>
+            </div>
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Teachers" asp-action="Index">Teachers</a>
+            </div>
+            <div class="container">
+                <a asp-controller="Account" asp-action="Login" class="navbar-brand">Sign in</a>
+            </div>
+            <div class="container">
+                <a asp-controller="Account" asp-action="Register" class="navbar-brand">Registration</a>
+            </div>
+            <div class="container">
+                <a asp-controller="Account" asp-action="Logout" class="navbar-brand">Sign out</a>
+            </div>
+        </nav>
+    </header>
+    @RenderBody()
+</body>
+</html>

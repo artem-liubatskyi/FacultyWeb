@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Course>
+@{
+    ViewData["Title"] = "All courses";
+}
+<h2>All Courses</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var course in Model)
+        {
+            <tr>
+                <td>
+                    @course.Id:
+                </td>
+                <td>
+                    <a asp-controller="Courses" asp-action="Details" asp-route-id="@course.Id">@course.Name</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

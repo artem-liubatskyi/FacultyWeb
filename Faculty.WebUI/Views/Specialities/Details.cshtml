@@ -1,0 +1,18 @@
+﻿@model Speciality
+
+@{
+    ViewData["Title"] = Model.Name + " details";
+}
+<h2>Courses of @Model.Name:</h2>
+<hr />
+
+<table class="table">
+    @foreach (var course in Model.Courses)
+    {
+        <tr>
+            <td>
+                <a asp-controller="Courses" asp-action="Details" asp-route-id="@course.Id">@course.Name</a>
+            </td>
+        </tr>
+    }
+ </table>

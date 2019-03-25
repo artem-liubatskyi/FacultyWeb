@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Speciality>
+@{
+    ViewData["Title"] = "All specialities";
+}
+
+<h2>Specialities:</h2>
+<table class="table">
+    @foreach (var spec in Model)
+    {
+        <tr>
+            <td>
+                @spec.Id:
+            </td>
+            <td>
+                <a asp-controller="Specialities" asp-action="Details" asp-route-id="@spec.Id">@spec.Name</a>
+            </td>
+        </tr>
+    }
+</table>
+    

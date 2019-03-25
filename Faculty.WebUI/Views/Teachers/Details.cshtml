@@ -1,0 +1,23 @@
+﻿@model Faculty.Data.Models.Teacher
+
+@{
+    ViewData["Title"] = Model.FullName + " details";
+}
+
+<h2>@Model.FullName</h2>
+<h3>Subjects:</h3>
+<table>
+    @foreach (var teacherSubject in Model.TeacherSubjects)
+    {
+        <tr>
+            <td>
+                <a asp-controller="Subjects" asp-action="Details" asp-route-id="@teacherSubject.Subject.Id">
+                    @teacherSubject.Subject.Name
+                </a>
+            </td>
+        </tr>
+    }
+</table>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
